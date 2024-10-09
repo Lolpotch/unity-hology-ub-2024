@@ -6,11 +6,13 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private RectTransform rectTransform;
     private Vector2 originalPosition;
     private bool isDragging = false;
+    private bool isEnteringRadiusTrash, isEnteringRadiusForward = false;
 
     RectTransform trash, forward;
     public float returnSpeed = 5f;
-    public string textForward = "Forward";
-    public string textTrash = "Trash";
+    public float triggerDistanceTrash = 50f;
+    public float triggerDistanceForward = 50f;
+    public GameObject textMessage, textForward, textTrash;
 
     private Canvas canvas; // Reference to the Canvas for proper mouse position conversion
 
@@ -34,7 +36,8 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // If dragging, set position to mouse position
         if (isDragging)
         {
-            ImageFollowsCamera();
+            ImageFollowsCursor();
+            DetectArea();
         }
 
         // If not dragging, lerp back to the original position
@@ -56,34 +59,17 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         isDragging = false;
     }
 
-    bool IsOverlapping(RectTransform rect1, RectTransform rect2)
+    void ImageFollowsCursor()
     {
-        return RectTransformUtility.RectangleContainsScreenPoint(rect1, rect2.position, null) ||
-            RectTransformUtility.RectangleContainsScreenPoint(rect2, rect1.position, null);
-    }
-
-    void ImageFollowsCamera()
-    {
-        // Convert the mouse position to UI RectTransform space
         Vector2 mousePos;
+        // Convert the mouse position to UI RectTransform space
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             rectTransform.parent as RectTransform,
             Input.mousePosition,
             null, //canvas.worldCamera, // Pass the canvas camera (especially for Screen Space - Camera)
             out mousePos);
 
-        rectTransform.anchoredPosition = mousePos;
-
-        // Check if the dragged image is inside the target area
-        if (IsOverlapping(trash, rectTransform))
-        {
-            Debug.Log("Dragged image is inside TRASH!");
-        }
-
-        if (IsOverlapping(forward, rectTransform))
-        {
-            Debug.Log("Dragged image is inside FORWARD!");
-        }
+        rectTransform.anchoredPosition = mousePos;        
     }
 
     void BackToOriginalPosition()
@@ -93,6 +79,98 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 originalPosition,
                 Time.deltaTime * returnSpeed
             );
+    }
+
+    void DetectArea()
+    {
+        // Check if the two RectTransforms are overlapping
+        float distanceTrash = CalculateDistanceBetweenRects(rectTransform, trash);
+
+        // Check if the distance is within the trigger distance
+        if (distanceTrash < triggerDistanceTrash)
+        {
+            if (!isEnteringRadiusTrash)
+            {
+                isEnteringRadiusTrash = true;
+                OnRadiusEnterTrash();
+            }
+        }
+        else
+        {
+            if (isEnteringRadiusTrash)
+            {
+                isEnteringRadiusTrash = false;
+                OnRadiusExitTrash();
+            }
+        }
+
+        // Check if the two RectTransforms are overlapping
+        float distanceForward = CalculateDistanceBetweenRects(rectTransform, forward);
+
+        // Check if the distance is within the trigger distance
+        if (distanceForward < triggerDistanceForward)
+        {
+            if (!isEnteringRadiusForward)
+            {
+                isEnteringRadiusForward = true;
+                OnRadiusEnterForward();
+            }
+        }
+        else
+        {
+            if (isEnteringRadiusForward)
+            {
+                isEnteringRadiusForward = false;
+                OnRadiusExitForward();
+            }
+        }
+    }
+
+    float CalculateDistanceBetweenRects(RectTransform rect1, RectTransform rect2)
+    {
+        Vector3 rect1WorldPos = rect1.position; // Get world position of rect1
+        Vector3 rect2WorldPos = rect2.position; // Get world position of rect2
+
+        // Calculate the distance between the centers of the two RectTransforms
+        float distance = Vector3.Distance(rect1WorldPos, rect2WorldPos);
+
+        return distance;
+    }
+
+    // Trigger Enter event
+    void OnRadiusEnterTrash()
+    {
+        Debug.Log("Enter TRASH");
+        // Add your enter trigger logic here (e.g., enable something)
+        textTrash.SetActive(true);
+        textMessage.SetActive(false);
+    }
+
+    // Trigger Exit event
+    void OnRadiusExitTrash()
+    {
+        Debug.Log("Exit TRASH");
+        // Add your exit trigger logic here (e.g., disable something)
+        textTrash.SetActive(false);
+        textMessage.SetActive(true);
+    }
+
+    // Trigger Enter event
+    void OnRadiusEnterForward()
+    {
+        Debug.Log("Enter FORWARD");
+        // Add your enter trigger logic here (e.g., enable something)
+        textForward.SetActive(true);
+        textMessage.SetActive(false);
+    }
+
+    // Trigger Exit event
+    void OnRadiusExitForward()
+    {
+        Debug.Log("Exit FORWARD");
+        // Add your exit trigger logic here (e.g., disable something)
+        textForward.SetActive(false);
+        textMessage.SetActive(true);
     }
 
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class TypewriterEffectTMP : MonoBehaviour
+public class TypewriterEffect : MonoBehaviour
 {
     public TMP_Text tmpText; // Reference to the TextMeshProUGUI component
     public float typingSpeed = 0.05f; // Speed of typing in seconds
@@ -12,7 +12,12 @@ public class TypewriterEffectTMP : MonoBehaviour
 
     void Start()
     {
-        fullText = tmpText.text; // Get the full text from the TMP_Text component
+        //StartTyping(fullText);
+    }
+
+    public void StartTyping(string text)
+    {
+        fullText = text;
         tmpText.text = ""; // Clear the text to start with an empty string
         StartCoroutine(ShowText()); // Start the typewriter effect
     }

@@ -4,7 +4,7 @@ public class SpawnEmail : MonoBehaviour
 {
     public Vector2 spawnpoint;
 
-    public RectTransform[] emails;
+    public GameObject[] emails;
     RectTransform canvas;
     void Start()
     {
@@ -13,9 +13,10 @@ public class SpawnEmail : MonoBehaviour
 
     public void Spawn()
     {
-        RectTransform email = Instantiate(emails[0]);
+        RectTransform email = Instantiate(emails[0]).GetComponent<RectTransform>();
         email.SetParent(canvas);
         email.anchoredPosition = spawnpoint;
+        email.localScale = Vector3.one;
     }
 
 }
