@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 2238229953026867973}
   - component: {fileID: 6356441054123077602}
   - component: {fileID: 4555112155496487718}
+  - component: {fileID: 3017344206168684287}
   m_Layer: 5
   m_Name: Email
   m_TagString: Untagged
@@ -369,6 +370,22 @@ MonoBehaviour:
   textMessage: {fileID: 7979671174443101387}
   textForward: {fileID: 8858099218527927105}
   textTrash: {fileID: 2953306957799800898}
+--- !u!114 &3017344206168684287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5358501072903784435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9b80e969cbd48429498509a1371396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+  moveSpeed: 50
+  destroyAfterSeconds: 2
+  moveDuration: 1
 --- !u!1 &7979671174443101387
 GameObject:
   m_ObjectHideFlags: 0

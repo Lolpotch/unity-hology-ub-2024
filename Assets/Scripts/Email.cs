@@ -43,6 +43,16 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // If not dragging, lerp back to the original position
         else if (rectTransform.anchoredPosition != originalPosition)
         {
+            if (isEnteringRadiusForward)
+            {
+                print("SEND FORWARD");
+                GetComponent<RectTransformMover>().StartMoveAndDestroy();
+            }
+            else if (isEnteringRadiusTrash)
+            {
+                print("SEND TRASH");
+            }
+
             BackToOriginalPosition();
         }
     }
@@ -83,6 +93,7 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void DetectArea()
     {
+        // TRASH AREA
         // Check if the two RectTransforms are overlapping
         float distanceTrash = CalculateDistanceBetweenRects(rectTransform, trash);
 
@@ -104,6 +115,7 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
         }
 
+        // FORWARD AREA
         // Check if the two RectTransforms are overlapping
         float distanceForward = CalculateDistanceBetweenRects(rectTransform, forward);
 
