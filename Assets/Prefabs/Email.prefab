@@ -382,9 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9b80e969cbd48429498509a1371396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
   moveSpeed: 50
-  destroyAfterSeconds: 2
+  destroyAfterSeconds: 1
   moveDuration: 1
 --- !u!1 &7979671174443101387
 GameObject:
