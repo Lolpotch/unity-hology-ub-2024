@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private RectTransform rectTransform;
+    Image image;
     private Vector2 originalPosition;
     private bool isDragging = false;
     private bool isEnteringRadiusTrash, isEnteringRadiusForward = false;
@@ -13,6 +15,7 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float triggerDistanceTrash = 50f;
     public float triggerDistanceForward = 50f;
     public GameObject textMessage, textForward, textTrash;
+    public Color trashColor, forwardColor;
 
     private Canvas canvas; // Reference to the Canvas for proper mouse position conversion
 
@@ -20,6 +23,7 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         // Get the RectTransform component of the UI element
         rectTransform = GetComponent<RectTransform>();
+        image = GetComponent<Image>();
 
         // Store the original position
         originalPosition = rectTransform.anchoredPosition;
@@ -46,11 +50,24 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (isEnteringRadiusForward)
             {
                 print("SEND FORWARD");
-                GetComponent<RectTransformMover>().StartMoveAndDestroy();
+                GetComponent<RectTransformMover>().StartMoveAndDestroy(Vector2.right);
+                GetComponent<ImageColorChanger>().StartChangeColor(Color.green);
+
+                Image fImage = forward.GetComponent<Image>();
+                Color currentColor = fImage.color;
+                currentColor.a = .6f;
+                fImage.color = currentColor;
             }
             else if (isEnteringRadiusTrash)
             {
                 print("SEND TRASH");
+                GetComponent<RectTransformMover>().StartMoveAndDestroy(Vector2.left);
+                GetComponent<ImageColorChanger>().StartChangeColor(Color.red);
+
+                Image tImage = trash.GetComponent<Image>();
+                Color currentColor = tImage.color;
+                currentColor.a = .6f;
+                tImage.color = currentColor;
             }
 
             BackToOriginalPosition();
@@ -156,6 +173,13 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // Add your enter trigger logic here (e.g., enable something)
         textTrash.SetActive(true);
         textMessage.SetActive(false);
+
+        image.color = trashColor;
+
+        Image tImage = trash.GetComponent<Image>();
+        Color currentColor = tImage.color;
+        currentColor.a = 1f;
+        tImage.color = currentColor;
     }
 
     // Trigger Exit event
@@ -165,6 +189,13 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // Add your exit trigger logic here (e.g., disable something)
         textTrash.SetActive(false);
         textMessage.SetActive(true);
+
+        image.color = Color.white;
+
+        Image tImage = trash.GetComponent<Image>();
+        Color currentColor = tImage.color;
+        currentColor.a = .6f;
+        tImage.color = currentColor;
     }
 
     // Trigger Enter event
@@ -174,6 +205,13 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // Add your enter trigger logic here (e.g., enable something)
         textForward.SetActive(true);
         textMessage.SetActive(false);
+
+        image.color = forwardColor;
+
+        Image fImage = forward.GetComponent<Image>();
+        Color currentColor = fImage.color;
+        currentColor.a = 1f;
+        fImage.color = currentColor;
     }
 
     // Trigger Exit event
@@ -183,6 +221,13 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // Add your exit trigger logic here (e.g., disable something)
         textForward.SetActive(false);
         textMessage.SetActive(true);
+
+        image.color = Color.white;
+
+        Image fImage = forward.GetComponent<Image>();
+        Color currentColor = fImage.color;
+        currentColor.a = .6f;
+        fImage.color = currentColor;
     }
 
 }

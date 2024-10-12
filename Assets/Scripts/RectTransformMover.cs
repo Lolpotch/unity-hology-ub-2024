@@ -4,6 +4,7 @@ using UnityEngine;
 public class RectTransformMover : MonoBehaviour
 {
     RectTransform rectTransform; // Reference to the RectTransform
+    Vector3 moveDirection;
     public float moveSpeed = 50f; // Speed of the upward movement
     public float destroyAfterSeconds = 2f; // Time after which the RectTransform will be destroyed
     public float moveDuration = 1f; // How long the RectTransform moves upwards
@@ -13,20 +14,20 @@ public class RectTransformMover : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
-    public void StartMoveAndDestroy()
+    public void StartMoveAndDestroy(Vector2 direction)
     {
-        StartCoroutine(MoveAndDestroy());
+        StartCoroutine(MoveAndDestroy(direction));
     }
 
     // Coroutine to move the RectTransform upward and destroy it after a period
-    IEnumerator MoveAndDestroy()
+    IEnumerator MoveAndDestroy(Vector2 direction)
     {
         float elapsedTime = 0f;
 
         // Move the RectTransform upwards over time
         while (elapsedTime < moveDuration)
         {
-            rectTransform.anchoredPosition += Vector2.up * moveSpeed * Time.deltaTime; // Move upward
+            rectTransform.anchoredPosition += direction * moveSpeed * Time.deltaTime; // Move upward
             elapsedTime += Time.deltaTime; // Increment elapsed time
             yield return null; // Wait until the next frame
         }
@@ -37,4 +38,13 @@ public class RectTransformMover : MonoBehaviour
         // Destroy the GameObject this script is attached to
         Destroy(gameObject);
     }
+
+}
+
+public enum Direction
+{
+    Left,
+    Right,
+    Up,
+    Down
 }

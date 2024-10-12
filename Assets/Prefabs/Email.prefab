@@ -65,10 +65,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Name - yourname@maily.com
+  m_text: 'REQUEST DENIAL - tutorial@how-to-play.com
 
 
-    THIS IS A TRASH MESSAGE'
+    Ini akan menjadi jawabanmu
+    untuk menolak permintaan. Konfirmasi penolakan dengan melepaskan email ini di
+    sini.
+
+
+    Hati-hati dengan keputusanmu karena itu akan memengaruhi nasib negaramu.
+
+
+    Semoga
+    beruntung.
+
+    (Lepas email ini untuk lanjut ke permainan)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}
   m_sharedMaterial: {fileID: -5365830014691820025, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}
@@ -284,6 +295,7 @@ GameObject:
   - component: {fileID: 6356441054123077602}
   - component: {fileID: 4555112155496487718}
   - component: {fileID: 3017344206168684287}
+  - component: {fileID: 4269103505905204181}
   m_Layer: 5
   m_Name: Email
   m_TagString: Untagged
@@ -370,6 +382,8 @@ MonoBehaviour:
   textMessage: {fileID: 7979671174443101387}
   textForward: {fileID: 8858099218527927105}
   textTrash: {fileID: 2953306957799800898}
+  trashColor: {r: 1, g: 0.88113207, b: 0.88113207, a: 1}
+  forwardColor: {r: 0.88113207, g: 1, b: 0.88113207, a: 1}
 --- !u!114 &3017344206168684287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +399,19 @@ MonoBehaviour:
   moveSpeed: 50
   destroyAfterSeconds: 1
   moveDuration: 1
+--- !u!114 &4269103505905204181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5358501072903784435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51a7cacab78a904782b1b5c57f0aedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
 --- !u!1 &7979671174443101387
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,15 +477,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TUTORIAL - tutorial@kawaii.com
+  m_text: 'TUTORIAL - tutorial@how-to-play.com
 
 
-    Lorem ipsum dolor sit amet. Lorem
-    ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
-    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor
-    sit. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.'
+
+    Ini adalah email di mana kamu
+    menerima permintaan dari banyak orang. Tanggung jawabmu adalah memutuskan apakah
+    ingin menerima atau menolak permintaan tersebut.
+
+
+
+    Coba seret dan tahan
+    email ini ke kedua ikon di bagian atas layar dan lihat pesan ini berubah.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}
   m_sharedMaterial: {fileID: -5365830014691820025, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}
@@ -592,10 +622,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Name - yourname@maily.com
+  m_text: 'REQUEST ACCEPT - tutorial@how-to-play.com
 
 
-    THIS IS A FORWARD MESSAGE'
+    Ini akan menjadi jawabanmu
+    dalam menerima permintaan. Terima permintaan dengan melepaskan email ini di sini.
+
+
+    Hati-hati
+    dengan keputusanmu karena akan memengaruhi nasib negaramu.
+
+
+    Semoga beruntung.
+
+    (Lepas
+    email ini untuk lanjut ke permainan)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}
   m_sharedMaterial: {fileID: -5365830014691820025, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}
