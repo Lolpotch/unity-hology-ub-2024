@@ -11,10 +11,13 @@ public class SpawnEmail : MonoBehaviour
     Image mailIcon; // Reference to the UI Image that shows the mail status
 
     RectTransform currentEmail; // Keep track of the currently spawned email
+    Button button;
+    bool firstSpawn = true; // Flag to track the first spawn
 
     void Start()
     {
         mailIcon = GetComponent<Image>();
+        button = GetComponent<Button>();
     }
 
     void Update()
@@ -23,6 +26,7 @@ public class SpawnEmail : MonoBehaviour
         if (currentEmail == null)
         {
             mailIcon.sprite = mailClose;
+            button.interactable = true;
         }
     }
 
@@ -31,8 +35,18 @@ public class SpawnEmail : MonoBehaviour
     {
         print("EMAIL SPAWNED");
 
-        // Instantiate the email and get its RectTransform
-        currentEmail = Instantiate(emails[0]).GetComponent<RectTransform>();
+        // If it's the first spawn, spawn the tutorial email (index 0)
+        if (firstSpawn)
+        {
+            currentEmail = Instantiate(emails[0]).GetComponent<RectTransform>();
+            firstSpawn = false; // Mark that the first email has been spawned
+        }
+        else
+        {
+            // For subsequent spawns, choose a random email from the rest of the array (index 1 and onward)
+            int randomIndex = Random.Range(1, emails.Length);
+            currentEmail = Instantiate(emails[randomIndex]).GetComponent<RectTransform>();
+        }
 
         // Set the parent, position, and scale
         currentEmail.SetParent(parent);
@@ -41,5 +55,6 @@ public class SpawnEmail : MonoBehaviour
 
         // Change the mail icon to mailOpen
         mailIcon.sprite = mailOpen;
+        button.interactable = false;
     }
 }
