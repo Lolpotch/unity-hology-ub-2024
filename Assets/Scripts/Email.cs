@@ -9,13 +9,15 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private Vector2 originalPosition;
     private bool isDragging = false;
     private bool isEnteringRadiusTrash, isEnteringRadiusForward = false;
+    Vector2 trashDefaultSize, forwardDefaultSize;
 
     RectTransform trash, forward;
     public float returnSpeed = 5f;
     public float triggerDistanceTrash = 50f;
     public float triggerDistanceForward = 50f;
+    public float increaseSizePercentage = 1.5f;
     public GameObject textMessage, textForward, textTrash;
-    public Color trashColor, forwardColor;
+    public Color trashColorEmail, forwardColorEmail;
 
     private Canvas canvas; // Reference to the Canvas for proper mouse position conversion
 
@@ -33,6 +35,9 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         trash = GameObject.Find("Trash").GetComponent<RectTransform>();
         forward = GameObject.Find("Forward").GetComponent<RectTransform>();
+
+        trashDefaultSize =  trash.sizeDelta;
+        forwardDefaultSize =  forward.sizeDelta;
     }
 
     private void Update()
@@ -57,6 +62,9 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 Color currentColor = fImage.color;
                 currentColor.a = .6f;
                 fImage.color = currentColor;
+
+                //Size back to normal
+                forward.sizeDelta = forwardDefaultSize;
             }
             else if (isEnteringRadiusTrash)
             {
@@ -68,6 +76,9 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 Color currentColor = tImage.color;
                 currentColor.a = .6f;
                 tImage.color = currentColor;
+
+                //Size back to normal
+                trash.sizeDelta = trashDefaultSize;
             }
 
             BackToOriginalPosition();
@@ -102,10 +113,10 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void BackToOriginalPosition()
     {
         rectTransform.anchoredPosition = Vector2.Lerp(
-                rectTransform.anchoredPosition,
-                originalPosition,
-                Time.deltaTime * returnSpeed
-            );
+            rectTransform.anchoredPosition,
+            originalPosition,
+            Time.deltaTime * returnSpeed
+        );
     }
 
     void DetectArea()
@@ -174,12 +185,15 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         textTrash.SetActive(true);
         textMessage.SetActive(false);
 
-        image.color = trashColor;
+        image.color = trashColorEmail;
 
         Image tImage = trash.GetComponent<Image>();
         Color currentColor = tImage.color;
         currentColor.a = 1f;
         tImage.color = currentColor;
+
+        // Make the Image size bigger by modifying the RectTransform size
+        trash.sizeDelta = new Vector2(trashDefaultSize.x * increaseSizePercentage, trashDefaultSize.y * increaseSizePercentage);
     }
 
     // Trigger Exit event
@@ -196,6 +210,9 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Color currentColor = tImage.color;
         currentColor.a = .6f;
         tImage.color = currentColor;
+
+        //Size back to normal
+        trash.sizeDelta = trashDefaultSize;
     }
 
     // Trigger Enter event
@@ -206,12 +223,15 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         textForward.SetActive(true);
         textMessage.SetActive(false);
 
-        image.color = forwardColor;
+        image.color = forwardColorEmail;
 
         Image fImage = forward.GetComponent<Image>();
         Color currentColor = fImage.color;
         currentColor.a = 1f;
         fImage.color = currentColor;
+
+        // Make the Image size bigger by modifying the RectTransform size
+        forward.sizeDelta = new Vector2(forwardDefaultSize.x * increaseSizePercentage, forwardDefaultSize.y * increaseSizePercentage);
     }
 
     // Trigger Exit event
@@ -228,6 +248,9 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Color currentColor = fImage.color;
         currentColor.a = .6f;
         fImage.color = currentColor;
+
+        //Size back to normal
+        forward.sizeDelta = forwardDefaultSize;
     }
 
 }
