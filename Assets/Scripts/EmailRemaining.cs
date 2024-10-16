@@ -3,9 +3,10 @@ using TMPro;
 
 public class EmailRemaining : MonoBehaviour
 {
+    public int startEmailRemaining;
     int emailRemaining;
     SpawnEmail spawnEmail;
-    public TextMeshProUGUI emailText; // Reference to TextMeshPro component
+    TextMeshProUGUI emailText; // Reference to TextMeshPro component
 
     // Start is called before the first frame update
     void Start()
@@ -13,7 +14,7 @@ public class EmailRemaining : MonoBehaviour
         emailText = GetComponent<TextMeshProUGUI>();
         spawnEmail = FindObjectOfType<SpawnEmail>();
 
-        emailRemaining = 16;
+        emailRemaining = startEmailRemaining;
         UpdateEmailText();
     }
 
