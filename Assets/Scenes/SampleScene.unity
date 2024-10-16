@@ -4454,7 +4454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddcb3a36fd620b4c927f77971eda6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emailText: {fileID: 0}
+  startEmailRemaining: 11
 --- !u!114 &1824345653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4656,6 +4656,10 @@ MonoBehaviour:
   - {fileID: 1122925438730272323, guid: 4c608b44f70d0ba49970d02cdd3d5d7d, type: 3}
   - {fileID: 1122925438730272323, guid: fbf8bf4954017424bafc553f71c38799, type: 3}
   - {fileID: 1122925438730272323, guid: 5366c666eee78a64d8c7d75562283a73, type: 3}
+  - {fileID: 1122925438730272323, guid: 5366c666eee78a64d8c7d75562283a73, type: 3}
+  - {fileID: 1122925438730272323, guid: a2bef91a46eec6a4bb0805116fefe927, type: 3}
+  - {fileID: 1122925438730272323, guid: 78af1c081760bc44e99b1907b70a0261, type: 3}
+  - {fileID: 1122925438730272323, guid: 9c29ce0eda9ae49448a61a7f72e45452, type: 3}
   parent: {fileID: 1190785354}
   canSpawn: 1
 --- !u!114 &1831407391

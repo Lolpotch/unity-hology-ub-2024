@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,12 +16,21 @@ public class SpawnEmail : MonoBehaviour
     bool firstSpawn = true; // Flag to track the first spawn
     public bool canSpawn = true;
 
+    private List<int> availableIndices;  // List to store available email indices
+
     void Start()
     {
         mailIcon = GetComponent<Image>();
         button = GetComponent<Button>();
 
         canSpawn = true;
+
+        // Initialize the list with all possible indices
+        availableIndices = new List<int>();
+        for (int i = 1; i < emails.Length; i++)
+        {
+            availableIndices.Add(i);
+        }
     }
 
     void Update()
@@ -46,9 +56,18 @@ public class SpawnEmail : MonoBehaviour
         }
         else
         {
-            // For subsequent spawns, choose a random email from the rest of the array (index 1 and onward)
-            int randomIndex = Random.Range(1, emails.Length);
-            currentEmail = Instantiate(emails[randomIndex]).GetComponent<RectTransform>();
+            if (availableIndices.Count == 0)
+            {
+                Debug.Log("All emails have been spawned.");
+                return;
+            }
+            // Get a random index from availableIndices
+            int randomIndex = Random.Range(1, availableIndices.Count);
+            int emailIndex = availableIndices[randomIndex];
+            currentEmail = Instantiate(emails[emailIndex]).GetComponent<RectTransform>();
+            
+            // Remove the selected index from availableIndices
+            availableIndices.RemoveAt(randomIndex);
         }
 
         // Set the parent, position, and scale
