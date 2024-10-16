@@ -15,9 +15,8 @@ PrefabInstance:
         mikell@maily.com
 
 
-        Permintaan Anda
-        telah kami pertimbangkan, tetapi kami perlu menekankan bahwa ini berisiko
-        terhadap keamanan.'
+        Kami akan memproses
+        permintaan anda.'
       objectReference: {fileID: 0}
     - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -113,31 +112,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectTrash
-      value: 5
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: moneyEffectTrash
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectForward
-      value: -5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: moneyEffectForward
-      value: 20
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: securityEffectTrash
-      value: 15
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: securityEffectForward
-      value: -25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5358501072903784435, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_Name
-      value: Email 5
+      value: Email 16
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
@@ -146,8 +145,8 @@ PrefabInstance:
         mikell@maily.com
 
 
-        Mohon maaf, permintaan
-        Anda tidak dapat kami penuhi karena masalah keamanan.'
+        Kami tidak dapat
+        memenuhi permintaan yang tidak masuk akal ini.'
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -159,14 +158,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'Data Anggaran untuk "Riset" Pribadi
+      value: 'Mencari Data dari Dimensi Lain
 
-        krisnan@politik.gov
+        %$#)^$% @multiverse.com
 
 
         Saya
-        anggota parlemen yang butuh data anggaran dari server pusat untuk riset pribadi
-        dan saya siap memberikan imbalan untuk anda.'
+        ingin menggunakan server untuk mencari sinyal dari dimensi paralel.'
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize

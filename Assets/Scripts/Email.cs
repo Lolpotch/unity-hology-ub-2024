@@ -8,7 +8,9 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     Image image;
     private Vector2 originalPosition;
     private bool isDragging = false;
+    bool isDragable = true;
     private bool isEnteringRadiusTrash, isEnteringRadiusForward = false;
+    private bool decreaseOnce;
     Vector2 trashDefaultSize, forwardDefaultSize;
 
     RectTransform trash, forward;
@@ -18,6 +20,8 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float increaseSizePercentage = 1.5f;
     public GameObject textMessage, textForward, textTrash;
     public Color trashColorEmail, forwardColorEmail;
+    public int happyEffectForward, moneyEffectForward, securityEffectForward;
+    public int happyEffectTrash, moneyEffectTrash, securityEffectTrash;
 
     private Canvas canvas; // Reference to the Canvas for proper mouse position conversion
 
@@ -38,51 +42,88 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         trashDefaultSize =  trash.sizeDelta;
         forwardDefaultSize =  forward.sizeDelta;
+
+        isDragable = true;
+        decreaseOnce = false;
     }
 
     private void Update()
     {
-        // If dragging, set position to mouse position
-        if (isDragging)
-        {
-            ImageFollowsCursor();
-            DetectArea();
-        }
-
-        // If not dragging, lerp back to the original position
-        else if (rectTransform.anchoredPosition != originalPosition)
-        {
-            if (isEnteringRadiusForward)
+            // If dragging, set position to mouse position
+            if (isDragging && isDragable)
             {
-                print("SEND FORWARD");
-                GetComponent<RectTransformMover>().StartMoveAndDestroy(Vector2.right);
-                GetComponent<ImageColorChanger>().StartChangeColor(Color.green);
-
-                Image fImage = forward.GetComponent<Image>();
-                Color currentColor = fImage.color;
-                currentColor.a = .6f;
-                fImage.color = currentColor;
-
-                //Size back to normal
-                forward.sizeDelta = forwardDefaultSize;
-            }
-            else if (isEnteringRadiusTrash)
-            {
-                print("SEND TRASH");
-                GetComponent<RectTransformMover>().StartMoveAndDestroy(Vector2.left);
-                GetComponent<ImageColorChanger>().StartChangeColor(Color.red);
-
-                Image tImage = trash.GetComponent<Image>();
-                Color currentColor = tImage.color;
-                currentColor.a = .6f;
-                tImage.color = currentColor;
-
-                //Size back to normal
-                trash.sizeDelta = trashDefaultSize;
+                ImageFollowsCursor();
+                DetectArea();
             }
 
-            BackToOriginalPosition();
-        }
+            // If not dragging, lerp back to the original position
+            else if (rectTransform.anchoredPosition != originalPosition)
+            {
+                if (isEnteringRadiusForward)
+                {
+                    print("SEND FORWARD");
+                    GetComponent<RectTransformMover>().StartMoveAndDestroy(Vector2.right);
+                    GetComponent<ImageColorChanger>().StartChangeColor(Color.green);
+
+                    Image fImage = forward.GetComponent<Image>();
+                    Color currentColor = fImage.color;
+                    currentColor.a = .6f;
+                    fImage.color = currentColor;
+
+                    //Size back to normal
+                    forward.sizeDelta = forwardDefaultSize;
+
+                    isDragable = false;
+
+                    if (!decreaseOnce)
+                    {
+                        decreaseOnce = true;
+                        FindObjectOfType<EmailRemaining>().DecreaseRemaining(1);
+
+                        if (happyEffectForward != 0)
+                        {FindObjectOfType<StatsEffect>().EffectHappy(happyEffectForward);}
+                        if (moneyEffectForward != 0)
+                        {FindObjectOfType<StatsEffect>().EffectMoney(moneyEffectForward);}
+                        if (securityEffectForward != 0)
+                        {FindObjectOfType<StatsEffect>().EffectSecurity(securityEffectForward);}
+                    }
+
+                    
+                }
+                else if (isEnteringRadiusTrash)
+                {
+                    print("SEND TRASH");
+                    GetComponent<RectTransformMover>().StartMoveAndDestroy(Vector2.left);
+                    GetComponent<ImageColorChanger>().StartChangeColor(Color.red);
+
+                    Image tImage = trash.GetComponent<Image>();
+                    Color currentColor = tImage.color;
+                    currentColor.a = .6f;
+                    tImage.color = currentColor;
+
+                    //Size back to normal
+                    trash.sizeDelta = trashDefaultSize;
+
+                    isDragable = false;
+
+                    if (!decreaseOnce)
+                    {
+                        decreaseOnce = true;
+                        FindObjectOfType<EmailRemaining>().DecreaseRemaining(1);
+                        
+                        if (happyEffectTrash != 0)
+                        {FindObjectOfType<StatsEffect>().EffectHappy(happyEffectTrash);}
+                        if (moneyEffectTrash != 0)
+                        {FindObjectOfType<StatsEffect>().EffectMoney(moneyEffectTrash);}
+                        if (securityEffectTrash != 0)
+                        {FindObjectOfType<StatsEffect>().EffectSecurity(securityEffectTrash);}
+                    }
+
+                    
+                }
+
+                BackToOriginalPosition();
+            }
     }
 
     // Called when the pointer is pressed down on the UI element

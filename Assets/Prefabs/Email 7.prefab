@@ -10,14 +10,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'REQUEST ACCEPTED
-
-        mikell@maily.com
-
-
-        Permintaan Anda
-        telah kami pertimbangkan, tetapi kami perlu menekankan bahwa ini berisiko
-        terhadap keamanan.'
+      value: "REQUEST ACCEPTED\nmikell@maily.com\n\nKami akan memberikan akses penuh
+        kepada tim anda.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -113,23 +107,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectTrash
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
-      propertyPath: moneyEffectTrash
       value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: moneyEffectTrash
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectForward
-      value: -5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: moneyEffectForward
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: securityEffectTrash
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: securityEffectForward
@@ -137,17 +131,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358501072903784435, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_Name
-      value: Email 5
+      value: Email 7
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'REQUEST DENIED
-
-        mikell@maily.com
-
-
-        Mohon maaf, permintaan
-        Anda tidak dapat kami penuhi karena masalah keamanan.'
+      value: "REQUEST DENIED\nmikell@maily.com\n\nAkses penuh tidak diperbolehkan
+        untuk pihak ketiga.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -159,14 +148,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'Data Anggaran untuk "Riset" Pribadi
-
-        krisnan@politik.gov
-
-
-        Saya
-        anggota parlemen yang butuh data anggaran dari server pusat untuk riset pribadi
-        dan saya siap memberikan imbalan untuk anda.'
+      value: "Akses Database untuk Peneliti\r\nbayu-susanto@riset.gov\r\n\nKami memerlukan
+        akses penuh ke database untuk proyek penelitian.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize

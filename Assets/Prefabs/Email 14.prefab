@@ -10,14 +10,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'REQUEST ACCEPTED
-
-        mikell@maily.com
-
-
-        Permintaan Anda
-        telah kami pertimbangkan, tetapi kami perlu menekankan bahwa ini berisiko
-        terhadap keamanan.'
+      value: "REQUEST ACCEPTED\nmikell@maily.com\n\nKami akan mendukung riset anda
+        dan memberikan akses yang diperlukan.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -113,31 +107,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectTrash
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
-      propertyPath: moneyEffectTrash
       value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: moneyEffectTrash
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectForward
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
-      propertyPath: moneyEffectForward
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
-      propertyPath: securityEffectTrash
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: moneyEffectForward
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: securityEffectTrash
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: securityEffectForward
-      value: -25
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5358501072903784435, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_Name
-      value: Email 5
+      value: Email 14
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
@@ -146,8 +140,8 @@ PrefabInstance:
         mikell@maily.com
 
 
-        Mohon maaf, permintaan
-        Anda tidak dapat kami penuhi karena masalah keamanan.'
+        Kami tidak dapat
+        memberikan akses karena beban server.'
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -159,14 +153,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'Data Anggaran untuk "Riset" Pribadi
+      value: 'Permohonan Data untuk Riset Medis
 
-        krisnan@politik.gov
+        dr.aulia@risetmedis.gov
 
 
-        Saya
-        anggota parlemen yang butuh data anggaran dari server pusat untuk riset pribadi
-        dan saya siap memberikan imbalan untuk anda.'
+        Kami
+        butuh akses untuk riset penyembuhan penyakit langka yang memerlukan analisis
+        data besar.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize

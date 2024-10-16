@@ -13,17 +13,20 @@ public class SpawnEmail : MonoBehaviour
     RectTransform currentEmail; // Keep track of the currently spawned email
     Button button;
     bool firstSpawn = true; // Flag to track the first spawn
+    public bool canSpawn = true;
 
     void Start()
     {
         mailIcon = GetComponent<Image>();
         button = GetComponent<Button>();
+
+        canSpawn = true;
     }
 
     void Update()
     {
         // Check if the current email has been destroyed and update the sprite
-        if (currentEmail == null)
+        if (currentEmail == null && canSpawn)
         {
             mailIcon.sprite = mailClose;
             button.interactable = true;

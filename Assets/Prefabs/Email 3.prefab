@@ -12,12 +12,19 @@ PrefabInstance:
       propertyPath: m_text
       value: 'REQUEST ACCEPTED
 
-        your.name@maily.com
+        mikell@maily.com
 
 
-        Kami setuju
-        dengan rekomendasi Anda dan akan memproses pembelian perangkat keamanan baru
-        untuk meningkatkan keamanan data.'
+        Kami akan menyetujui
+        rekomendasi anda dan menyiapkan anggaran yang dibutuhkan.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2543424378946961931, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_Pivot.x
@@ -103,19 +110,47 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: happyEffectTrash
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: happyEffectForward
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: moneyEffectForward
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: securityEffectTrash
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: securityEffectForward
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5358501072903784435, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_Name
-      value: Email 2
+      value: Email 3
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
       value: 'REQUEST DENIED
 
-        your.name@maily.com
+        mikell@maily.com
 
 
         Mohon maaf, kami
         tidak dapat memenuhi permintaan ini karena keterbatasan anggaran.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
@@ -124,22 +159,17 @@ PrefabInstance:
         agus.prasetyo@keamanan.gov
 
 
-        Dear
-        Tim Manajemen,
-
-        Kami di bagian keamanan telah mengevaluasi sistem
-        saat ini dan menemukan beberapa kelemahan yang dapat berisiko terhadap integritas
-        data. Kami merekomendasikan untuk segera membeli perangkat baru dengan fitur
-        keamanan lebih canggih, meskipun biayanya cukup mahal. Kami percaya investasi
-        ini akan meningkatkan keamanan pusat data. Mohon disetujui secepatnya.'
+        Kami
+        dari tim IT menemukan kelamahan dalam sistem anda. Kami sangat merekomendasikan
+        untuk upgrade ke perangkat yang lebih canggih.'
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSizeBase
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8858099218527927105, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_IsActive
