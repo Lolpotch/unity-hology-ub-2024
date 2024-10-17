@@ -86,6 +86,8 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         {FindObjectOfType<StatsEffect>().EffectMoney(moneyEffectForward);}
                         if (securityEffectForward != 0)
                         {FindObjectOfType<StatsEffect>().EffectSecurity(securityEffectForward);}
+
+                        FindAnyObjectByType<SoundEffectPlayer>().PlaySwipe();
                     }
 
                     
@@ -117,6 +119,8 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         {FindObjectOfType<StatsEffect>().EffectMoney(moneyEffectTrash);}
                         if (securityEffectTrash != 0)
                         {FindObjectOfType<StatsEffect>().EffectSecurity(securityEffectTrash);}
+
+                        FindAnyObjectByType<SoundEffectPlayer>().PlaySwipe();
                     }
 
                     
