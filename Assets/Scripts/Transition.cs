@@ -16,7 +16,7 @@ public class Transition : MonoBehaviour
 
     public float fadeDuration = .8f;  // Duration of the fade
     public bool isRunOnStart;
-    public bool indexToLoad;
+    public int indexToLoad;
 
     private void Start()
     {
@@ -47,6 +47,7 @@ public class Transition : MonoBehaviour
             imageToFade.color = imageColor;
             yield return null;
         }
+        FindObjectOfType<GameManager>().LoadScene(indexToLoad);
     }
 
     private IEnumerator FadeIn()
