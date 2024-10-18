@@ -1,10 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class AiOpen : MonoBehaviour
 {
     public int usageStart = 2;
-    int usageLeft;
-    public GameObject aiNotOpenWindow, aiOpenAskWindow;
+    public int usageLeft;
+    public GameObject aiNotOpenWindow, aiOpenAskWindow, aiEmpty;
+    public TextMeshProUGUI aiOpenAskMessage;
 
     void Start()
     {
@@ -13,15 +15,24 @@ public class AiOpen : MonoBehaviour
 
     public void OnPressAiButton()
     {
-        Email email = FindObjectOfType<Email>();
-        
-        if (email == null)
+        if (usageLeft > 0)
         {
-            aiNotOpenWindow.SetActive(true);
+            Email email = FindObjectOfType<Email>();
+        
+            if (email == null)
+            {
+                aiNotOpenWindow.SetActive(true);
+            }
+            else
+            {
+                aiOpenAskMessage.text = "Apakah anda yakin ingin menggunakan fitur AI? (sisa penggunaan : " + usageLeft.ToString() + ")";
+                aiOpenAskWindow.SetActive(true);
+            }
         }
         else
         {
-            aiOpenAskWindow.SetActive(true);
+            aiEmpty.SetActive(true);
         }
+        
     }
 }

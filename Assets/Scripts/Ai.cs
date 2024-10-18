@@ -8,6 +8,8 @@ public class Ai : MonoBehaviour
 
     void OnEnable()
     {
+        FindObjectOfType<AiOpen>().usageLeft--;
+
         email = FindObjectOfType<Email>();
 
         ShowEffectStats(txtAcceptHappy, email.happyEffectForward);

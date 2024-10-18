@@ -13,7 +13,9 @@ public class SpawnEmail : MonoBehaviour
 
     RectTransform currentEmail; // Keep track of the currently spawned email
     Button button;
+    SoundEffectPlayer soundEffect;
     bool firstSpawn = true; // Flag to track the first spawn
+    bool mailIconCloseOnce = true;
     public bool canSpawn = true;
 
     private List<int> availableIndices;  // List to store available email indices
@@ -22,6 +24,7 @@ public class SpawnEmail : MonoBehaviour
     {
         mailIcon = GetComponent<Image>();
         button = GetComponent<Button>();
+        soundEffect = FindObjectOfType<SoundEffectPlayer>();
 
         canSpawn = true;
 
@@ -31,15 +34,24 @@ public class SpawnEmail : MonoBehaviour
         {
             availableIndices.Add(i);
         }
+
+        mailIconCloseOnce = false;
     }
 
     void Update()
     {
         // Check if the current email has been destroyed and update the sprite
-        if (currentEmail == null && canSpawn)
+        if (currentEmail == null)
         {
             mailIcon.sprite = mailClose;
             button.interactable = true;
+
+            if (!mailIconCloseOnce)
+            {
+                mailIconCloseOnce = true;
+                soundEffect.PlayNotification();
+            }
+
         }
     }
 
@@ -78,5 +90,6 @@ public class SpawnEmail : MonoBehaviour
         // Change the mail icon to mailOpen
         mailIcon.sprite = mailOpen;
         button.interactable = false;
+        mailIconCloseOnce = false;
     }
 }

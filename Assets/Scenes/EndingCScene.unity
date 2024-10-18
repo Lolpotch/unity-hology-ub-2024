@@ -177,8 +177,10 @@ MonoBehaviour:
   transition: {fileID: 297144408}
   dialogues:
   - Server database pusat mulai dibobol oleh pihak tidak bertanggung jawab!
-  - Data masyarakat dan data negara tersebar menyebabkan keamanan negara menjadi
-    rapuh.
+  - Dilaporkan kebijakan-kebijakan terakhir membuat keamanan server pusat data kian
+    lemah.
+  - Akibatnya, data masyarakat dan data negara tersebar dan menyebabkan keamanan
+    negara menjadi rapuh.
   - Ending 3 dari 4 telah didapat. Mainkan lagi untuk mendapatkan ending yang lain.
 --- !u!114 &36282728
 MonoBehaviour:

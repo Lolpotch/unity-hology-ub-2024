@@ -176,7 +176,7 @@ MonoBehaviour:
   typeSpeed: 0.03
   transition: {fileID: 297144408}
   dialogues:
-  - ANGGARAN UNTUK OPERASIONAL PUSAT DATA HABIS!!
+  - ANGGARAN UNTUK OPERASIONAL SERVER PUSAT DATA HABIS!!
   - Banyak pegawai yang mulai resign akibat dari gaji mereka yang mulai mengecil
     tetapi dengan beban kerja yang masih besar.
   - "Dengan dana yang minim, data di server pusat juga menjadi tidak dapat diakses
