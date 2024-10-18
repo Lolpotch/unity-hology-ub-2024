@@ -4,6 +4,7 @@ using TMPro;
 public class EmailRemaining : MonoBehaviour
 {
     public int startEmailRemaining;
+    public Transition endingD;
     int emailRemaining;
     SpawnEmail spawnEmail;
     TextMeshProUGUI emailText; // Reference to TextMeshPro component
@@ -40,5 +41,6 @@ public class EmailRemaining : MonoBehaviour
     public void OnEmailEmpty()
     {
         spawnEmail.canSpawn = false;
+        endingD.StartFadeOut();
     }
 }

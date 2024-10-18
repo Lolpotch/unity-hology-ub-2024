@@ -8,6 +8,7 @@ public class StatsEffect : MonoBehaviour
     public TextMeshProUGUI txtHappy, txtMoney, txtSecurity;
     public RectTransform parHappy, parMoney, parSecurity;
     public GameObject effectParticle;
+    public Transition endingA, endingB, endingC;
 
     void Start()
     {
@@ -45,6 +46,8 @@ public class StatsEffect : MonoBehaviour
         else if (happy < 0){happy = 0;}
         txtHappy.text = happy.ToString() + "%";
 
+        if (happy == 0){endingA.StartFadeOut();}
+
         // Instantiate the particle effect at the position of parHappy
         GameObject particleInstance = Instantiate(effectParticle);
 
@@ -63,6 +66,8 @@ public class StatsEffect : MonoBehaviour
         else if (money < 0){money = 0;}
         txtMoney.text = money.ToString() + "%";
 
+        if (money == 0){endingB.StartFadeOut();}
+
         // Instantiate the particle effect at the position of parHappy
         GameObject particleInstance = Instantiate(effectParticle);
 
@@ -80,6 +85,8 @@ public class StatsEffect : MonoBehaviour
         if (security > 100){security = 100;}
         else if (security < 0){security = 0;}
         txtSecurity.text = security.ToString() + "%";
+
+        if (security == 0){endingC.StartFadeOut();}
 
         // Instantiate the particle effect at the position of parHappy
         GameObject particleInstance = Instantiate(effectParticle);

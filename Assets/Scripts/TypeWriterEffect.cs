@@ -1,13 +1,12 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;  // or using TMPro; if using TextMeshPro
 using TMPro;
-using Unity.VisualScripting;
 
 public class TypewriterEffect : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText; // Use this for TextMeshPro
     public float typeSpeed = 0.05f;
+    public Transition transition;
 
     private string currentText = "";
     private Coroutine typingCoroutine;
@@ -77,16 +76,20 @@ public class TypewriterEffect : MonoBehaviour
     // Dummy method to load next dialogue (you can replace this with your actual logic)
     private void LoadNextDialogue()
     {
-        StartTyping(dialogues[dialogIndex]);
-
-        if (dialogIndex < dialogues.Length - 1)
+        FindObjectOfType<SoundEffectPlayer>().PlayClick();
+        if (dialogIndex < dialogues.Length)
         {
-            dialogIndex++;
+            StartTyping(dialogues[dialogIndex]);
+
         }
         else
         {
-            print("LAST DIALOG REACHED");
-            //Load scene 2
+            //Fade out to next scene
+            print("GO TO NEXT SCENE");
+            transition.StartFadeOut();
         }
+        
+        dialogIndex++;
+
     }
 }

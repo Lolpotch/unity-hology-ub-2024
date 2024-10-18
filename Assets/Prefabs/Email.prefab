@@ -506,16 +506,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TUTORIAL - tutorial@how-to-play.com
+  m_text: 'TUTORIAL
+
+    tutorial@how-to-play.com
 
 
-    Ini adalah email di mana kamu
-    menerima permintaan dari banyak orang. Tanggung jawabmu adalah memutuskan apakah
-    ingin menerima atau menolak permintaan tersebut.
+    Ini adalah email di mana
+    kamu menerima permintaan dari banyak orang. Tanggung jawabmu adalah memutuskan
+    apakah ingin menerima atau menolak permintaan tersebut.
 
 
-    Coba seret dan tahan email
-    ini ke kedua ikon di bagian atas layar dan lihat pesan ini berubah.'
+    Coba seret dan
+    tahan email ini ke kedua ikon di bagian atas layar dan lihat pesan ini berubah.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}
   m_sharedMaterial: {fileID: -5365830014691820025, guid: 69feb4e4322a4f344b77aca3bad08cdc, type: 2}

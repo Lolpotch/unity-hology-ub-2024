@@ -20,4 +20,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(buildIndex);
     }
+
+    public void LoadNextScene()
+    {
+        // Get the currently active scene and reload it
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
