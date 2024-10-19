@@ -270,11 +270,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7718666721385918227, guid: 1271d387bc7963f449f28e08eedd2306, type: 3}
       propertyPath: Loop
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7718666721385918227, guid: 1271d387bc7963f449f28e08eedd2306, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46a6be4316984214b8fdc74cbaf7e9d4, type: 3}
+    - target: {fileID: 7718666721385918227, guid: 1271d387bc7963f449f28e08eedd2306, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8142371347575045152, guid: 1271d387bc7963f449f28e08eedd2306, type: 3}
       propertyPath: m_LocalPosition.x
@@ -665,7 +669,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 100.4583, y: 121.9851}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972789248
 MonoBehaviour:
@@ -826,7 +830,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 100.46, y: 71.756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186426422
 MonoBehaviour:

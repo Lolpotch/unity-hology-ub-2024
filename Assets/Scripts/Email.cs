@@ -125,8 +125,7 @@ public class Email : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
                     
                 }
-
-                BackToOriginalPosition();
+                else {BackToOriginalPosition();}
             }
     }
 

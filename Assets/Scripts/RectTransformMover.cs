@@ -27,7 +27,7 @@ public class RectTransformMover : MonoBehaviour
         // Move the RectTransform upwards over time
         while (elapsedTime < moveDuration)
         {
-            rectTransform.anchoredPosition += direction * moveSpeed * Time.deltaTime; // Move upward
+            rectTransform.anchoredPosition += direction * moveSpeed; // Move upward
             elapsedTime += Time.deltaTime; // Increment elapsed time
             yield return null; // Wait until the next frame
         }
