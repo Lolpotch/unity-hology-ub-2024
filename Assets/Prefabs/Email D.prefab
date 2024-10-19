@@ -15,8 +15,8 @@ PrefabInstance:
         mikell@maily.com
 
 
-        Kami sangat menyesal
-        dan akan mempertimbangkan kompensasi ini.'
+        Proposal diterima.
+        Segera buat akunnya dengan password tersebut!'
       objectReference: {fileID: 0}
     - target: {fileID: 354970886837493784, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -112,31 +112,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectTrash
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: moneyEffectTrash
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: happyEffectForward
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: moneyEffectForward
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: securityEffectTrash
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 4555112155496487718, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: securityEffectForward
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5358501072903784435, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_Name
-      value: Email 16
+      value: Email D
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
@@ -145,8 +145,8 @@ PrefabInstance:
         mikell@maily.com
 
 
-        Kami tidak dapat
-        memenuhi permintaan kompensasi karena anggaran terbatas.'
+        Proposal ditolah.
+        Buat lagi password nya!'
       objectReference: {fileID: 0}
     - target: {fileID: 5729410927687765852, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize
@@ -158,13 +158,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'Kompensasi atas Kebocoran Data
+      value: 'Permintaan Pembuatan Password
 
-        refabar_maq@email.com
+        tim-it@informatics.gov
 
 
-        Masyarakat
-        ingin kompensasi atas sebagian data pribadi mereka yang bocor di publik.'
+        Proposal
+        akun pengelola server
+
+        login: admin-server-pusat
+
+        password:
+        q@e2Wx4!f@cVd'
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_fontSize

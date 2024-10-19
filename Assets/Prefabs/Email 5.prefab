@@ -159,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229323784634605503, guid: 7c7d09c11b2841842b8959c4ab76076a, type: 3}
       propertyPath: m_text
-      value: 'Data Anggaran untuk "Riset" Pribadi
+      value: 'Data Anggaran untuk Riset Pribadi
 
         krisnan@politik.gov
 
